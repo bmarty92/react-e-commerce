@@ -1,0 +1,7 @@
+import { NAME } from "./constants";
+
+export const GET_PRODUCTS = `${NAME}.GET_PRODUCTS`;
+export const ADD_TO_CART = `${NAME}.ADD_TO_CART`;
+export const REMOVE_FROM_CART = `${NAME}.REMOVE_FROM_CART`;
+export const INCREASE_CART_QUANTITY = `${NAME}.INCREASE_CART_QUANTITY`;
+export const DECREASE_CART_QUANTITY = `${NAME}.DECREASE_CART_QUANTITY`;

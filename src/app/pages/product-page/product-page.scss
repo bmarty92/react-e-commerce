@@ -1,0 +1,10 @@
+.product-page {
+  margin: auto;
+  width: 1200px;
+
+  .product-container {
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
