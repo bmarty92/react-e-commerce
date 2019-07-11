@@ -1,6 +1,13 @@
 .cart {
   max-width: 1200px;
   margin: auto;
+
+  .page-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 0;
+  }
+
   .cart-container {
     .top-row {
       display: flex;
@@ -11,7 +18,7 @@
       height: 56px;
       width: 100%;
       padding: 16px;
-      background-color: #d9dcf3;
+      background-color: #f0f1f8;
       border: 1px solid #aaacc6;
       border-radius: 5px;
       margin-bottom: 16px;
@@ -38,12 +45,29 @@
       }  
     }
 
+    .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      height: 56px;
+      width: 100%;
+      padding: 16px;
+      background-color: #f0f1f8;
+      border: 1px solid #aaacc6;
+      border-radius: 5px;
+      margin-bottom: 16px;
+    }
+
     .small-cell {
-      min-width: 100px;
-      max-width: 100px;
+      margin: 0 12px;
+      min-width: 120px;
+      max-width: 120px;
     }
   
     .full-cell {
+      margin: 0 12px;
       width: 100%;
     }
   }

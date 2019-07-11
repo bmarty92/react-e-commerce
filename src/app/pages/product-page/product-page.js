@@ -12,7 +12,7 @@ function ProductPage(props) {
 
   return (
     <div className="product-page">
-      <h1>Products</h1>
+      <div className="page-title">Products</div>
       <div className="product-container">
         {products.map((product, index) => (
           <Card data={product} key={index} addToCart={addToCart} />

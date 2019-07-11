@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./card.scss";
+import { formatPrice } from '../../lib/utils/utils';
+import Button from '../../lib/button/button';
 
 class Card extends React.Component {
   constructor(props) {
@@ -38,7 +40,7 @@ class Card extends React.Component {
         <h2>{name}</h2>
         <img src={image} />
         <div className="product-description">{desc}</div>
-        <h2>Price {price}</h2>
+        <h2>Price {formatPrice(price)}</h2>
         <div className="product-buy">
           <input
             onChange={this.setQuantity}
@@ -46,7 +48,7 @@ class Card extends React.Component {
             type="number"
             placeholder="Qty."
           />
-          <button onClick={this.makeOrder}>Add to cart</button>
+          <Button onClick={this.makeOrder}>Add to cart</Button>
         </div>
       </div>
     );

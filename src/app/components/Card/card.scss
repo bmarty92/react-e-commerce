@@ -3,9 +3,16 @@
   border: 1px solid #aaacc6;
   border-radius: 5px;
   box-sizing: border-box;
-  flex-basis: 20%;
+  flex-basis: 25%;
   padding: 12px;
-  margin: 12px;
+
+  @media screen and ( max-width: 768px ) {
+    flex-basis: 50%;
+  }
+
+  @media screen and ( max-width: 425px ) {
+    flex-basis: 100%;
+  }
 
   .product-description {
     min-height: 50px;
@@ -26,26 +33,6 @@
       outline: none;
       height: 25px;
       background-color: #f0f1f8;
-    }
-
-    button {
-      width: 40%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 0 16 px;
-      border: 0;
-      height: 25px;
-      outline: none;
-      border-radius: 5px;
-      background-color: #fecf2e;
-      cursor: pointer;
-      color: #2e304e;
-
-      &:hover {
-        background-color: #bb9414;
-      }
     }
   }
 }

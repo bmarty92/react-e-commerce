@@ -1,12 +1,13 @@
 .navbar {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  max-width: 1200px;
   justify-content: flex-start;
   list-style-type: none;
+  margin: auto;
+  padding-top: 20px;
 
   a {
-    text-decoration: none;
-    margin: 0 20px;
+    margin: 30px;
   }
 }

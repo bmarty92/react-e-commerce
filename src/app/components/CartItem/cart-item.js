@@ -1,7 +1,10 @@
 import React from "react";
-import { bindActionCreators } from 'redux';
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
+import Button from "../../lib/button/button";
+import { formatPrice } from "../../lib/utils/utils";
 import shop from "../../shop";
 
 import "./cart-item.scss";
@@ -9,11 +12,10 @@ import "./cart-item.scss";
 class CartItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.data.quantity)
+    console.log(this.props.data.quantity);
     this.state = {
       quantity: this.props.data.quantity
     };
-    
   }
 
   increaseQuantity = event => {
@@ -23,7 +25,7 @@ class CartItem extends React.Component {
     this.setState({
       quantity: this.props.data.quantity++
     });
-    increaseCartQuantity({quantity, data});
+    increaseCartQuantity({ quantity, data });
   };
 
   decreaseQuantity = event => {
@@ -32,35 +34,48 @@ class CartItem extends React.Component {
     const { quantity } = this.state;
     this.setState({
       quantity: this.props.data.quantity--
-    })
-    decreaseCartQuantity({quantity, data});
+    });
+    decreaseCartQuantity({ quantity, data });
   };
 
   render() {
     const { data, removeFromCart } = this.props;
     const { name, price, quantity, id } = data;
-     
+
     return (
       <div className="cart-item">
         <div className="small-cell">{id}</div>
         <div className="full-cell">{name}</div>
         <div className="small-cell">
           <div>{quantity}</div>
-          <button onClick={this.increaseQuantity}>+</button>
-          <button onClick={this.decreaseQuantity}>-</button>
+          <Button onClick={this.increaseQuantity} small>
+            +
+          </Button>
+          <Button onClick={this.decreaseQuantity} small>
+            -
+          </Button>
         </div>
-        <div className="small-cell">{price * quantity}</div>
+        <div className="small-cell">{formatPrice(price * quantity)} EU</div>
         <div className="small-cell">
-          <button onClick={() => removeFromCart(data)}>X</button>
+          <Button onClick={() => removeFromCart(data)} small remove>
+            X
+          </Button>
         </div>
       </div>
     );
   }
 }
 
+CartItem.propTypes = {
+  cart: PropTypes.shape.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+  increaseCartQuantity: PropTypes.func.isRequired,
+  decreaseCartQuantity: PropTypes.func.isRequired
+};
+
 const enhance = connect(
   state => ({
-    cart: shop.selectors.getCart(state), 
+    cart: shop.selectors.getCart(state)
   }),
   dispatch =>
     bindActionCreators(

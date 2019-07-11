@@ -1,36 +1,36 @@
 .button {
   display: inline-flex;
   align-items: center;
-
   justify-content: center;
-
   box-sizing: border-box;
-
   margin: 0;
-
-  padding: 0 32px;
-
   border: 0;
-
-  height: 56px;
-
+  height: 25px;
   outline: none;
-
   border-radius: 5px;
-
   background-color: #fecf2e;
-
   cursor: pointer;
-
-  font-family: Ubuntu, serif;
-
   font-weight: 700;
-
   font-size: 14px;
-
   text-transform: uppercase;
-
   color: #2e304e;
+  word-break: none;
+  list-style-type: none;
 
-  transition: background-color 0.25s;
+  &.big {
+    width: 120px;
+    height: 46px;
+  }
+
+  &.small {
+    min-width: 25;
+    max-width: 25px;
+    min-width: 25px;
+    max-height: 25px;
+    margin: 2px;
+  }
+
+  &.remove {
+    background-color: rgb(221, 25, 25);
+  }
 }
